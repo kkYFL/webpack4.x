@@ -29,10 +29,10 @@ module.exports = {
       //   collapseWhitespace: true     //折叠HTML文本为一行
       // },
       // Hash: true                     //HTML 中引用文件添加hash值
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.css' //抽离出来的CSS文件名
     })
-    // new MiniCssExtractPlugin({
-    //   filename: 'main.css' //抽离出来的CSS文件名
-    // })
   ],
 
   module: { // 模块
@@ -43,11 +43,11 @@ module.exports = {
     rules: [ //规则
       { // 处理CSS
         test: /\.css$/, 
-        use: ['style-loader', 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       { // 处理less
         test: /\.less$/,
-        use: ['style-loader', 'css-loader','less-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader','less-loader']
       }
         // sass    node-sass sass-loader
         // stylus  stylus stylus-loader  CSS预处理器

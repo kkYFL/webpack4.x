@@ -1,0 +1,9 @@
+body{
+  background: red
+}
+
+body div {
+  border: 1px solid #efefee;
+  transform: rotate(45peg);
+}
+
