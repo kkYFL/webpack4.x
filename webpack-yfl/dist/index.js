@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// require('./index.css');\n\nconsole.log('yflddd');\n\n// @import './index.css';\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// require('./index.css');\n\nconsole.log('yflddd');\n\n// @import './index.css';\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

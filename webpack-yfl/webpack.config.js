@@ -43,11 +43,11 @@ module.exports = {
     rules: [ //规则
       { // 处理CSS
         test: /\.css$/, 
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
       },
       { // 处理less
         test: /\.less$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader','less-loader']
+        use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader','less-loader']
       }
         // sass    node-sass sass-loader
         // stylus  stylus stylus-loader  CSS预处理器
