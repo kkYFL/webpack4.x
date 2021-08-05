@@ -26,7 +26,7 @@ module.exports = {
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
     compress: true                            // 压缩
   },
-  mode: 'production',                              // 模式  默认2种  production  development
+  mode: 'development',                              // 模式  默认2种  production  development
   entry: path.join(__dirname,'./src/index.js'),     // 入口
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
@@ -54,6 +54,17 @@ module.exports = {
     // style-loader 把css 插入到head标签中
     // loader 特点：loader功能单一；默认从右向左执行；
     rules: [ //规则
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: { // 用babel-loader  需要把es6-es5
+            presets: [
+              '@babel/preset-env'
+            ]
+          }
+        }
+      },
       { // 处理CSS
         test: /\.css$/, 
         use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
