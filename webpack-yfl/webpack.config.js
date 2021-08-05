@@ -2,9 +2,22 @@ let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 const { Hash } = require('crypto');
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');  // 抽离CSS插件
+let OptimizeCss = require('optimize-css-assets-webpack-plugin');
+let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 
 module.exports = {
+  optimization:{ // 优化项
+    minimizer:[
+      new UglifyJsPlugin({
+        cache: true, // 是否使用缓存
+        parallel: true, // 使用并发打包
+        sourceMap: true  // 源码映射
+      }),
+      new OptimizeCss()
+    ]
+  },
   devServer:{  //开发服务器配置
     port: "3000",
     host:  "localhost",
@@ -13,7 +26,7 @@ module.exports = {
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
     compress: true                            // 压缩
   },
-  mode: 'development',                              // 模式  默认2种  production  development
+  mode: 'production',                              // 模式  默认2种  production  development
   entry: path.join(__dirname,'./src/index.js'),     // 入口
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
