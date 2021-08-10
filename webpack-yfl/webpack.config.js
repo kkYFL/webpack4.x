@@ -52,8 +52,17 @@ module.exports = {
     // css-oader 处理css 相关的模块 @import  解析路径等
     // less-loader  less -> css
     // style-loader 把css 插入到head标签中
-    // loader 特点：loader功能单一；默认从右向左执行；
+    // loader 特点：loader功能单一；默认从右向左执行；从下到上执行
     rules: [ //规则
+      // { // eslint
+      //   test:/\.js$/,
+      //   use:{
+      //     loader:'eslint-loader',
+      //     options: {
+      //       enforce: 'pre' // previous 优先执行
+      //     }
+      //   }
+      // },
       {
         test: /\.js$/,
         use: {
