@@ -34,6 +34,11 @@
 
  npm install -D babel-loader @babel/core @babel/preset-env
  
+ #### es新增加语法和高级语法的处理
+   es7 语法装饰器： @babel/plugin-proposal-decorators
+   高级语法处理： @babel/plugin-transform-runtime
+   
+   问题：webpack.config.js配置后依然有问题，然后添加并且配置了.babelrc文件
 
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的

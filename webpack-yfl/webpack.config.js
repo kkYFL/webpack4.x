@@ -61,9 +61,15 @@ module.exports = {
           options: { // 用babel-loader  需要把es6-es5
             presets: [
               '@babel/preset-env'
+            ],
+            plugins: [
+              ["@babel/plugin-proposal-decorators", { "legacy": true }],  // es 装饰器
+              ["@babel/plugin-proposal-class-properties", { "loose": true }],
+              "@babel/plugin-transform-runtime"                           // 高级语法处理
             ]
           }
-        }
+        },
+        exclude: /node-modules/
       },
       { // 处理CSS
         test: /\.css$/, 
