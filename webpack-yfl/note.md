@@ -38,7 +38,11 @@
    es7 语法装饰器： @babel/plugin-proposal-decorators
    高级语法处理： @babel/plugin-transform-runtime
    
-   问题：webpack.config.js配置后依然有问题，然后添加并且配置了.babelrc文件
+   问题1：webpack.config.js配置后依然有问题，然后添加并且配置了.babelrc文件
+   问题2： "Cannot assign to read only property 'exports' of object '#<Object>'" 
+   解决参考：https://github.com/webpack/webpack/issues/11510
+   解决参考：https://blog.csdn.net/m0_37686205/article/details/99580526
+   问题分析：项目中不同的包代码规范不一commonjs/ES6,两种模式共存引发问题
 
 ####  配置eslint 代码检查
     1. 安装  eslint  eslint-loader

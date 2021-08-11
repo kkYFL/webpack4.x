@@ -75,6 +75,7 @@ module.exports = {
             presets: [
               '@babel/preset-env'
             ],
+            sourceType: 'unambiguous',
             plugins: [
               ["@babel/plugin-proposal-decorators", { "legacy": true }],  // es 装饰器
               ["@babel/plugin-proposal-class-properties", { "loose": true }],
