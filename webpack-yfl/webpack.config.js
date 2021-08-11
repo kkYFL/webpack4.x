@@ -63,10 +63,19 @@ module.exports = {
       //     }
       //   }
       // },
-      // {
-      //   test:/\.(png|jpg|gif)$/,
-      //   use:'file-loader'
-      // },
+      {
+        test:/\.(png|jpg|gif)$/,
+        //  url-loader 做一个限制 当图片小于XKB的时候，用base64处理
+        //  否则用file-loader产生真实图片
+        use:{
+          loader: 'url-loader',
+          options:{
+            esModule: false,
+            name: '[name].[ext]',
+            limit: 10240
+          }
+        },
+      },
       {
         test: /\.js$/,
         use: {

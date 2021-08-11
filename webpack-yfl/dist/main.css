@@ -12,5 +12,6 @@ body div {
   border: 1px solid red;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  background: url(mimi.png);
 }
 

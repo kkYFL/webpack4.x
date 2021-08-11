@@ -5,8 +5,8 @@ console.log('yflddd');
 // @import './index.css';
 
 require('./index.css');
-require('./index.less');
 
+import './index.less';
 
 
 let fn = () => {
@@ -28,8 +28,9 @@ function * gen(params){
 
 console.log(gen().next());
 
+
 // js引入图片
-// import logo from './mimi.png';
-// let image = new Image();
-// image.src = logo;
-// document.body.appendChild(image);
+import logo from './mimi.png';
+let image = new Image();
+image.src = logo;
+document.body.appendChild(image);

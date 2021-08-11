@@ -157,10 +157,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var _regeneratorRuntime = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n\nvar _classCallCheck = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n\nvar _marked = /*#__PURE__*/_regeneratorRuntime.mark(gen);\n\n// require('./index.css');\nconsole.log('yflddd'); // @import './index.css';\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\nvar fn = function fn() {\n  console.log('yfl-yyds!');\n};\n\nvar A = function A() {\n  \"use strict\";\n\n  _classCallCheck(this, A);\n\n  this.a = 1;\n};\n\nvar astr = new A();\nconsole.log('----asss---', astr.a);\n\nfunction gen(params) {\n  return _regeneratorRuntime.wrap(function gen$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _context.next = 2;\n          return 11;\n\n        case 2:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _marked);\n}\n\nconsole.log(gen().next()); // js引入图片\n// import logo from './mimi.png';\n// let image = new Image();\n// image.src = logo;\n// document.body.appendChild(image);\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.less */ \"./src/index.less\");\n/* harmony import */ var _mimi_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mimi.png */ \"./src/mimi.png\");\n/* harmony import */ var _mimi_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mimi_png__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\nvar _marked = /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(gen);\n\n// require('./index.css');\nconsole.log('yflddd'); // @import './index.css';\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n\n\nvar fn = function fn() {\n  console.log('yfl-yyds!');\n};\n\nvar A = function A() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, A);\n\n  this.a = 1;\n};\n\nvar astr = new A();\nconsole.log('----asss---', astr.a);\n\nfunction gen(params) {\n  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function gen$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _context.next = 2;\n          return 11;\n\n        case 2:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _marked);\n}\n\nconsole.log(gen().next()); // js引入图片\n\n\nvar image = new Image();\nimage.src = _mimi_png__WEBPACK_IMPORTED_MODULE_3___default.a;\ndocument.body.appendChild(image);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -173,6 +174,17 @@ eval("var _regeneratorRuntime = __webpack_require__(/*! @babel/runtime/regenerat
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/index.less?");
+
+/***/ }),
+
+/***/ "./src/mimi.png":
+/*!**********************!*\
+  !*** ./src/mimi.png ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"mimi.png\";\n\n//# sourceURL=webpack:///./src/mimi.png?");
 
 /***/ })
 
