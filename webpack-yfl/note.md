@@ -45,6 +45,12 @@
     2.配置.eslintrc.json 配置规则检查文件（去官网选择配置下载到项目；手动添加配置，或者选取别人做好的一些配置copy）
     2.webpack.config.js  配置eslint
 
+#### 图片处理
+    ##### 图片引入方式：
+    1.JS引入 
+    2.CSS引入  background('url')
+    3.HTML标签引入 <img src="">
+
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
  2. 本来安装的是webpack 4.0.0 的版本，发现该版本有bug，获取了一个4.x较高的版本  😭坑死了，坑太多

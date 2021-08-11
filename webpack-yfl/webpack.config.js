@@ -63,6 +63,10 @@ module.exports = {
       //     }
       //   }
       // },
+      // {
+      //   test:/\.(png|jpg|gif)$/,
+      //   use:'file-loader'
+      // },
       {
         test: /\.js$/,
         use: {
