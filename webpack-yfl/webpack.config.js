@@ -64,7 +64,11 @@ module.exports = {
       //   }
       // },
       {
-        test:/\.(png|jpg|gif)$/,
+        test: /\.html$/,
+        use: 'html-withimg-loader'
+      },
+      {
+        test:/\.(png|jpg|jpeg|gif)$/,
         //  url-loader 做一个限制 当图片小于XKB的时候，用base64处理
         //  否则用file-loader产生真实图片
         use:{
@@ -72,7 +76,8 @@ module.exports = {
           options:{
             esModule: false,
             name: '[name].[ext]',
-            limit: 10240
+            limit: 10240,
+            // outputPath: 'images/'  //图片打包路径
           }
         },
       },

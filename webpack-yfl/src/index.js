@@ -34,3 +34,8 @@ import logo from './mimi.png';
 let image = new Image();
 image.src = logo;
 document.body.appendChild(image);
+
+
+// import storypng from './story.png';
+
+// import womenpng from './women.png';

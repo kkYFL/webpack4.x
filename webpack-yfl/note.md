@@ -55,9 +55,16 @@
     2.CSS引入  background('url')
     3.HTML标签引入 <img src="">
 
-    安装: file-loader url-loader   小图片url-loader转成base64格式处理否则file-loader按照真实图片图例
-    问题：esModue 
+    安装: file-loader url-loader html-withimg-loader  小图片url-loader转成base64格式处理否则url-loader调用file-loader处理
+    url-loader依赖于file-loader
+    html-withimg-loader:处理html src引入的图片
+    相关问题：
+    1.问题：esModue 
     解决参考：https://segmentfault.com/a/1190000021360248
+    2.src引入图片不会被打包？JS文件中的图片可以被打包
+    3.图片打包配置问题
+    4.打包图片路径配置
+
 
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
