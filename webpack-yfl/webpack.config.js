@@ -38,6 +38,16 @@ module.exports = {
   watchOptions: { // 监控选项
     ignored: /node-modules/   //需要忽略的文件
   },
+  devServer:{
+    proxy:{
+      // '/api':'http://localhost:5000' // 配置一个代理
+      '/person/more/userinfo':{   //  配置代理 并且重写路径
+        target: 'http://localhost:5000',
+        pathRewrite: {'/person/more':''}
+      }
+
+    }
+  },
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
     filename: 'index.js',                          // 打包后的文件名

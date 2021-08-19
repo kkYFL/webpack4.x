@@ -84,6 +84,8 @@
      配置过程出现了错误 https://blog.csdn.net/bianliuzhu/article/details/89553021
      分析：不同的版本插件是不断的在提升和改变的，一些API和使用方法和之前不一致
 
+####  webpack proxy 跨域代理的配置
+
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
  2. 本来安装的是webpack 4.0.0 的版本，发现该版本有bug，获取了一个4.x较高的版本  😭坑死了，坑太多

@@ -43,10 +43,26 @@ document.body.appendChild(image);
 
 
 
-class YFL {
-  constructor(){
-    console.lo('出错了！');
-  }
+// class YFL {
+//   constructor(){
+//     console.lo('出错了！');
+//   }
+// }
+
+// let yfl = new YFL();
+
+
+
+// 跨域请求数据
+let xhr = new XMLHttpRequest();
+
+// 本地域名http://localhost:8080 
+xhr.open('GET','/api/user',true);
+
+// xhr.open('GET','/person/userinfo',true);
+
+xhr.onload = function(){
+  console.log(xhr.response);
 }
 
-let yfl = new YFL();
+xhr.send();
