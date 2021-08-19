@@ -4,7 +4,7 @@ const { Hash } = require('crypto');
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');  // 抽离CSS插件
 let OptimizeCss = require('optimize-css-assets-webpack-plugin');
 let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
+let { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -55,7 +55,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css' //抽离出来的CSS文件名
-    })
+    }),
+    new CleanWebpackPlugin(),  //默认清空打包文件目录
   ],
 
   module: { // 模块
