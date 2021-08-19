@@ -26,7 +26,7 @@ module.exports = {
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
     compress: true                            // 压缩
   },
-  mode: 'production',                              // 模式  默认2种  production  development
+  mode: 'development',                              // 模式  默认2种  production  development
   entry: path.join(__dirname,'./src/index.js'),     // 入口
   // 源码映射
   // 1. devtool:'source-map', 源码映射 会单独产生一个sourcemap文件，报错后 ，会标识 ，当前错误的列和行
@@ -34,6 +34,10 @@ module.exports = {
   // 3. devtool:'cheap-module-source-map', 会产生单独的映射文件，报错后 ， 不产生列
   // 4. devtool: 'chap-module-eval-source-map', 不会产生单独的映射文件，不会产生列
   devtool:'source-map',
+  watch:true,
+  watchOptions: { // 监控选项
+    ignored: /node-modules/   //需要忽略的文件
+  },
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
     filename: 'index.js',                          // 打包后的文件名
