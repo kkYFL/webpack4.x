@@ -26,8 +26,14 @@ module.exports = {
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
     compress: true                            // 压缩
   },
-  mode: 'development',                              // 模式  默认2种  production  development
+  mode: 'production',                              // 模式  默认2种  production  development
   entry: path.join(__dirname,'./src/index.js'),     // 入口
+  // 源码映射
+  // 1. devtool:'source-map', 源码映射 会单独产生一个sourcemap文件，报错后 ，会标识 ，当前错误的列和行
+  // 2. devtool:'eval-source-map', 不会单独产生一个sourcemap文件，报错后 ，会标识 ，当前错误的列和行
+  // 3. devtool:'cheap-module-source-map', 会产生单独的映射文件，报错后 ， 不产生列
+  // 4. devtool: 'chap-module-eval-source-map', 不会产生单独的映射文件，不会产生列
+  devtool:'source-map',
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
     filename: 'index.js',                          // 打包后的文件名
@@ -44,7 +50,7 @@ module.exports = {
       // Hash: true                     //HTML 中引用文件添加hash值
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.css' //抽离出来的CSS文件名
+      filename: 'css/main.css' //抽离出来的CSS文件名
     })
   ],
 
@@ -77,7 +83,7 @@ module.exports = {
             esModule: false,
             name: '[name].[ext]',
             limit: 10240,
-            // outputPath: 'images/'  //图片打包路径
+            outputPath: 'images/'  //图片打包路径
           }
         },
       },
@@ -101,11 +107,11 @@ module.exports = {
       },
       { // 处理CSS
         test: /\.css$/, 
-        use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
+        use: [{loader:MiniCssExtractPlugin.loader,options:{publicPath:'../'}},'css-loader','postcss-loader']
       },
       { // 处理less
         test: /\.less$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader','less-loader']
+        use: [{loader:MiniCssExtractPlugin.loader,options:{publicPath:'../'}},'css-loader','postcss-loader','less-loader'],
       }
         // sass    node-sass sass-loader
         // stylus  stylus stylus-loader  CSS预处理器

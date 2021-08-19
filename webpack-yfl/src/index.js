@@ -33,9 +33,20 @@ console.log(gen().next());
 import logo from './mimi.png';
 let image = new Image();
 image.src = logo;
+image.id="jj";
 document.body.appendChild(image);
 
 
 // import storypng from './story.png';
 
 // import womenpng from './women.png';
+
+
+
+class YFL {
+  constructor(){
+    console.lo('出错了！');
+  }
+}
+
+let yfl = new YFL();
