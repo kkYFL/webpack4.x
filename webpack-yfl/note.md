@@ -86,6 +86,14 @@
 
 ####  webpack proxy 跨域代理的配置
 
+
+####  webpack 区分不同的环境
+      webpack-merge -D    进行不用环境配置文件的合并
+      webpack.dev.js      开发环境配置
+      webpack.prod.js     线上环境配置
+      webpack.config.js   公共基础配置
+    
+    
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
  2. 本来安装的是webpack 4.0.0 的版本，发现该版本有bug，获取了一个4.x较高的版本  😭坑死了，坑太多
