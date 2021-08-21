@@ -18,13 +18,21 @@ module.exports = {
       new OptimizeCss()
     ]
   },
-  devServer:{  //开发服务器配置
+  devServer:{     //开发服务器配置
     port: "3000",
     host:  "localhost",
     progress: true,  //是否显示进度
     // overlay: true,
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
-    compress: true                            // 压缩
+    compress: true,                            // 压缩
+    open: true,
+    proxy:{
+      // '/api':'http://localhost:5000' // 配置一个代理
+      '/person/more/userinfo':{   //  配置代理 并且重写路径
+        target: 'http://localhost:5000',
+        pathRewrite: {'/person/more':''}
+      }
+    }
   },
   mode: 'development',                              // 模式  默认2种  production  development
   entry: path.join(__dirname,'./src/index.js'),     // 入口
@@ -37,16 +45,6 @@ module.exports = {
   watch:true,
   watchOptions: { // 监控选项
     ignored: /node-modules/   //需要忽略的文件
-  },
-  devServer:{
-    proxy:{
-      // '/api':'http://localhost:5000' // 配置一个代理
-      '/person/more/userinfo':{   //  配置代理 并且重写路径
-        target: 'http://localhost:5000',
-        pathRewrite: {'/person/more':''}
-      }
-
-    }
   },
   output: {
     // filename: 'index.[hash:8].js',                          // 打包后的文件名
@@ -74,6 +72,7 @@ module.exports = {
     // less-loader  less -> css
     // style-loader 把css 插入到head标签中
     // loader 特点：loader功能单一；默认从右向左执行；从下到上执行
+    noParse:/jquery/,  // 不去解析jQuery中的依赖库（对于我们属于的比较独立的依赖库可以不去解析，是一种优化手段）
     rules: [ //规则
       // { // eslint
       //   test:/\.js$/,
@@ -108,7 +107,8 @@ module.exports = {
           loader: 'babel-loader',
           options: { // 用babel-loader  需要把es6-es5
             presets: [
-              '@babel/preset-env'
+              '@babel/preset-env',
+              "@babel/preset-react"
             ],
             sourceType: 'unambiguous',
             plugins: [
@@ -118,7 +118,8 @@ module.exports = {
             ]
           }
         },
-        exclude: /node-modules/
+        exclude: /node-modules/,       // 排除
+        include: path.resolve('src')   // 包含
       },
       { // 处理CSS
         test: /\.css$/, 

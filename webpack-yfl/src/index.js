@@ -66,3 +66,12 @@ xhr.onload = function(){
 }
 
 xhr.send();
+
+
+
+
+import React from 'react';
+import { render } from 'react-dom';
+
+render(<h1>JSX</h1>,window.root);
+

@@ -37,12 +37,17 @@
  #### es新增加语法和高级语法的处理
    es7 语法装饰器： @babel/plugin-proposal-decorators
    高级语法处理： @babel/plugin-transform-runtime
+   JSX语法支持：@babel/preset-react
    
    问题1：webpack.config.js配置后依然有问题，然后添加并且配置了.babelrc文件
    问题2： "Cannot assign to read only property 'exports' of object '#<Object>'" 
    解决参考：https://github.com/webpack/webpack/issues/11510
    解决参考：https://blog.csdn.net/m0_37686205/article/details/99580526
    问题分析：项目中不同的包代码规范不一commonjs/ES6,两种模式共存引发问题
+   问题3： Support for the experimental syntax 'jsx' isn't currently enabled
+   分析：添加对JSX语法支持，参考链接：https://www.wenjiangs.com/doc/babel-babel-preset-react
+   
+
 
 ####  配置eslint 代码检查
     1. 安装  eslint  eslint-loader
@@ -79,6 +84,9 @@
      1. clean-webpack-plugin  清理插件
      2. copyWebpackPlugin     拷贝插件
      3. bannerPlugin  内置     版权声明插件
+     4. dllPlugin  动态链接库
+
+     
 
      clean-webpack-plugin:
      配置过程出现了错误 https://blog.csdn.net/bianliuzhu/article/details/89553021
@@ -93,6 +101,12 @@
       webpack.prod.js     线上环境配置
       webpack.config.js   公共基础配置
     
+
+#### webpack 优化手段
+     noParse: 不去解析某些我们熟悉的没有依赖项的库
+     exclude: /node-modules/,       // 排除
+     include: path.resolve('src')   // 包含
+     ignorePlugin:  一些库文件可能很大有些内容不需要，可以忽略不引入降低包的大小
     
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
