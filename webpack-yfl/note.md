@@ -84,7 +84,7 @@
      1. clean-webpack-plugin  清理插件
      2. copyWebpackPlugin     拷贝插件
      3. bannerPlugin  内置     版权声明插件
-     4. dllPlugin  动态链接库
+     4. dllPlugin  动态链接库   biuld过程中关闭clean-webpack-plugin
 
      
 
