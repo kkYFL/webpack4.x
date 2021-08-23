@@ -5,6 +5,7 @@ let MiniCssExtractPlugin = require('mini-css-extract-plugin');  // 抽离CSS插�
 let OptimizeCss = require('optimize-css-assets-webpack-plugin');
 let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -52,6 +53,9 @@ module.exports = {
     path: path.join(__dirname,'dist'),              // 路径
   },
   plugins: [
+    new webpack.DllReferencePlugin({ // 配置动态链接库映射文件
+      manifest:path.resolve(__dirname,'dist','manifest.json')
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',                // 模板文件
       filename: 'index.html'                       // 文件名字

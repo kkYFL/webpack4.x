@@ -103,10 +103,13 @@
     
 
 #### webpack 优化手段
-     noParse: 不去解析某些我们熟悉的没有依赖项的库
-     exclude: /node-modules/,       // 排除
-     include: path.resolve('src')   // 包含
-     ignorePlugin:  一些库文件可能很大有些内容不需要，可以忽略不引入降低包的大小
+     1.noParse: 不去解析某些我们熟悉的没有依赖项的库
+     2.exclude: /node-modules/,       // 排除
+     3.include: path.resolve('src')   // 包含
+     4.ignorePlugin:  一些库文件可能很大有些内容不需要，可以忽略不引入降低包的大小
+     5.dllPlugin: 动态链接库  https://juejin.cn/post/6844903952140468232
+       把比较大的第三方文件打包缓存配置索引文件，主体打包的时候先去找缓存，找不到再去重新打包
+     
     
 #### 配置过程中的问题记录
  1. 配置过程中出现了各种的loader和plugin与webpack版本匹配关系引起的问题,各种问题，然后去GitHub找匹配的版本，挺恶心的
