@@ -1002,10 +1002,19 @@ xhr.onload = function () {
   console.log(xhr.response);
 };
 
-xhr.send();
+xhr.send(); // 
 
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_5__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", null, "JSX"), window.root);
+
+Object(react_dom__WEBPACK_IMPORTED_MODULE_5__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", null, "JSX"), window.jk); //懒加载
+// let button = document.createElement('button');
+// button.innerHTML = 'hello';
+// button.addEventListener('click',function(){
+//   // es6 草案中语法 jsonp实现动态加载文件
+//   import('./source.js').then(data => {
+//     console.log(data);
+//   });
+// });
 
 /***/ }),
 

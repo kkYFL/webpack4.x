@@ -5,6 +5,7 @@ let MiniCssExtractPlugin = require('mini-css-extract-plugin');  // 抽离CSS插�
 let OptimizeCss = require('optimize-css-assets-webpack-plugin');
 let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const webpack = require('webpack');
 
 
@@ -54,8 +55,10 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({ // 配置动态链接库映射文件
+      context: __dirname,   // 必填，否则找不到'_dll_[name]',会报错
       manifest:path.resolve(__dirname,'dist','manifest.json')
     }),
+    new AddAssetHtmlPlugin({ filepath: path.resolve(__dirname,'dist','_dll_react.js') }),
     new HtmlWebpackPlugin({
       template: './src/index.html',                // 模板文件
       filename: 'index.html'                       // 文件名字
@@ -67,8 +70,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css' //抽离出来的CSS文件名
-    }),
-    new CleanWebpackPlugin(),  //默认清空打包文件目录
+    })
+    // new CleanWebpackPlugin(),  //默认清空打包文件目录
   ],
 
   module: { // 模块

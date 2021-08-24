@@ -8,12 +8,14 @@ module.exports = {
   output:{
     filename:'_dll_[name].js',   //产生的文件名
     path:path.resolve(__dirname,'dist'),//打包路径
-    library:'_dll_[name]',    //产出文件中导出的对象名 _dll_react/_dll_react-dom
+    sourceMapFilename: "[name].map", 
+    library:'_dll_[name]',    //产出文件中导出的对象名 _dll_react
     // libraryTarget:'var'  //commjs  var 
    },
    plugins:[
      new webpack.DllPlugin({ // 配置映射文件已经映射文件的名字路径等
        name:'_dll_[name]',   // name === library  备注：name要和liabray保持一致
+       context: __dirname,   // 必填，否则找不到'_dll_[name]',会报错
        path:path.resolve(__dirname,'dist','manifest.json') // 映射文件名以及产生的路径
      })
    ]

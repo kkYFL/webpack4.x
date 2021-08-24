@@ -55,12 +55,9 @@ document.body.appendChild(image);
 
 // 跨域请求数据
 let xhr = new XMLHttpRequest();
-
 // 本地域名http://localhost:8080 
 xhr.open('GET','/api/user',true);
-
 // xhr.open('GET','/person/userinfo',true);
-
 xhr.onload = function(){
   console.log(xhr.response);
 }
@@ -69,9 +66,19 @@ xhr.send();
 
 
 
-
+// 
 import React from 'react';
 import { render } from 'react-dom';
+render(<h1>JSX</h1>,window.jk);
 
-render(<h1>JSX</h1>,window.root);
 
+
+//懒加载
+// let button = document.createElement('button');
+// button.innerHTML = 'hello';
+// button.addEventListener('click',function(){
+//   // es6 草案中语法 jsonp实现动态加载文件
+//   import('./source.js').then(data => {
+//     console.log(data);
+//   });
+// });

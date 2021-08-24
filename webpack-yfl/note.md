@@ -107,8 +107,16 @@
      3.include: path.resolve('src')   // 包含
      4.ignorePlugin:  一些库文件可能很大有些内容不需要，可以忽略不引入降低包的大小
      5.dllPlugin: 动态链接库  https://juejin.cn/post/6844903952140468232
-       把比较大的第三方文件打包缓存配置索引文件，主体打包的时候先去找缓存，找不到再去重新打包
+       5.1 把比较大的第三方文件打包缓存配置索引文件，主体打包的时候先去找缓存，找不到再去重新打包
        biuld过程中关闭clean-webpack-plugin
+       5.2 配置过程中报错，找不到'_dll_react.js',网上说是context没有配置报错：https://blog.csdn.net/Vito_w7/article/details/98500327
+           添加了context后还是报错，最后在HTML中引入_dll_react.js 方式引入文件不再手动引入就OK了
+
+#### happypack 多线程打包
+     
+
+#### webpack 懒加载
+
 
     
 #### 配置过程中的问题记录
