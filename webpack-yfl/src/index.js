@@ -73,12 +73,13 @@ render(<h1>JSX</h1>,window.jk);
 
 
 
-//懒加载
-// let button = document.createElement('button');
-// button.innerHTML = 'hello';
-// button.addEventListener('click',function(){
-//   // es6 草案中语法 jsonp实现动态加载文件
-//   import('./source.js').then(data => {
-//     console.log(data);
-//   });
-// });
+//懒加载  vue 懒加载   react懒加载
+let button = document.createElement('button');
+button.innerHTML = 'Hello Button1234';
+button.addEventListener('click',function(){
+  // es6 草案中语法 jsonp实现动态加载文件
+  import('./source.js').then(data => {
+    console.log('懒加载--',data);
+  });
+});
+document.body.appendChild(button);

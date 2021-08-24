@@ -28,6 +28,7 @@ module.exports = {
     contentBase: path.resolve(__dirname,'dist'), // dist目录开启服务
     compress: true,                            // 压缩
     open: true,
+    hot:true,                                  // 启用热更新
     proxy:{
       // '/api':'http://localhost:5000' // 配置一个代理
       '/person/more/userinfo':{   //  配置代理 并且重写路径
@@ -70,7 +71,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css' //抽离出来的CSS文件名
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()  // 热更新插件
     // new CleanWebpackPlugin(),  //默认清空打包文件目录
   ],
 
