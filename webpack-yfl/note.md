@@ -24,11 +24,8 @@
 #### css-优化压缩/js-优化压缩
 
   optimize-css-assets-webpack-plugin
-
   uglifyjs-webpack-plugin
-
   开发环境不走优化配置
-
 
  #### es6->es5
 
@@ -80,6 +77,7 @@
 #### watch  打包监控配置
 
 
+
 #### webpack 小插件使用
      1. clean-webpack-plugin  清理插件
      2. copyWebpackPlugin     拷贝插件
@@ -90,7 +88,6 @@
      clean-webpack-plugin:
      配置过程出现了错误 https://blog.csdn.net/bianliuzhu/article/details/89553021
      分析：不同的版本插件是不断的在提升和改变的，一些API和使用方法和之前不一致
-
 ####  webpack proxy 跨域代理的配置
 
 
