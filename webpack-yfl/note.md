@@ -79,7 +79,7 @@
 
 ceshissss
 
-
+2222
 
 #### webpack 小插件使用
      1. clean-webpack-plugin  清理插件
@@ -92,7 +92,7 @@ ceshissss
      配置过程出现了错误 https://blog.csdn.net/bianliuzhu/article/details/89553021
      分析：不同的版本插件是不断的在提升和改变的，一些API和使用方法和之前不一致
 ####  webpack proxy 跨域代理的配置
-
+sdsdsdsdssd
 
 ####  webpack 区分不同的环境
       webpack-merge -D    进行不用环境配置文件的合并
